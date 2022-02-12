@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Durations</title>
+</head>
+<style>
+    body{
+        background-color: rgb(137, 180, 182);
+    }
+        .d{
+        background-color:rgb(236, 228, 193);
+        margin:50px;
+        padding: 100px 50px 100px 1000px;
+        font-size: x-large;
+        border-radius: 10px;
+        border: solid 1px;
+    }
+    @media screen and (max-width:1500px) {
+        .d{
+            background-color: rgb(236, 228, 193);
+            margin:50px;
+            font-size: x-large;
+            border-radius: 10px;
+            border: solid 1px;
+            padding: 100px 100px 100px 150px;
+        }
+    }
+    </style>
+<body>
+    {% if duration.id == None%}
+    <div class=d id=2>
+        No such Flight Available <br>click here to see all flights
+        <a href="{% url 'flights' %}">Flights</a>
+    </div>
+    {%else%}
+    <div class=d id=1>Flight number {{duration.id}} lasts for {{duration.dur}} minutes</div>
+    {%endif%}
+</body>
+</html>

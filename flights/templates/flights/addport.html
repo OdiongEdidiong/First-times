@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add an Airport</title>
+</head>
+<style>
+    body{
+        background-color: cadetblue;
+    }
+    div{
+        background-color: crimson;
+        height: 200px;
+        margin: 100px;
+        padding: 150px 50px 0px 100px;
+        border: 10px solid rgb(167, 4, 37);
+        border-radius: 10px;
+    }
+    form{
+        font-size: larger;
+    }
+</style>
+<body>
+    <div>
+        <form action="" method="POST">
+            {%csrf_token%}
+            {{fill}}
+            {%if msg %}
+            <h2>{{msg}}</h2>
+            {%else%}
+            <h2>{{fmsg}}</h2>
+            {% endif %}
+            <button>Add Airport</button>
+        </form>
+    </div>
+</body>
+</html>
